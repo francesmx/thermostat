@@ -35,13 +35,18 @@ describe('Thermostat', function(){
     });
 
     it("won't increase the temperature beyond the maximum", function(){
-      expect(function(){ thermostat.increaseTemp(thermostat.MAX_TEMPERATURE); }).toThrowError('Cannot increase temperature beyond the maximum.');
+      expect(function(){ thermostat.increaseTemp(thermostat.MAX_TEMPERATURE - thermostat.currentTemperature); }).toThrowError('Cannot increase temperature beyond the maximum.');
     });
 
     it('decreasing the temperature', function(){
       thermostat.decreaseTemp(2);
       expect(thermostat.currentTemperature).toEqual(18)
     });
+
+    it("won't decrease the temperature beyond the minimum", function(){
+      expect(function(){ thermostat.decreaseTemp(thermostat.MAX_TEMPERATURE - thermostat.currentTemperature); }).toThrowError('Cannot decrease temperature beyond the min.');
+    });
+
   });
 
   describe('power saving mode', function(){
@@ -60,9 +65,17 @@ describe('Thermostat', function(){
   describe('reset temperature', function(){
 
     it('resets temperature to 20', function(){
-      thermostat.increaseTemp(100);
+      thermostat.increaseTemp(5);
       thermostat.resetTemp();
       expect(thermostat.currentTemperature).toEqual(20)
+    });
+  });
+
+  describe('display colour', function(){
+
+    it('changes display to green when below 18 degrees', function(){
+      thermostat.decreaseTemp(3);
+      expect(thermostat.colour).toEqual('Green')
     });
   });
 });

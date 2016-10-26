@@ -8,15 +8,17 @@ function Thermostat(){
   this.currentTemperature = this.DEFAULT_TEMPERATURE
 }
 
-// if(this._weather.isStormy()) {
-//   throw new Error("cannot land during storm");
-// }
-
 Thermostat.prototype.increaseTemp = function(amount){
+  if(this.currentTemperature + amount >= this.MAX_TEMPERATURE) {
+    throw new Error("Cannot increase temperature beyond the maximum.");
+  }
   this.currentTemperature += amount;
 }
 
 Thermostat.prototype.decreaseTemp = function (amount) {
+  if(this.currentTemperature - amount <= this.MIN_TEMPERATURE) {
+    throw new Error("Cannot decrease temperature beyond the min.");
+  }
   this.currentTemperature -= amount;
 }
 
