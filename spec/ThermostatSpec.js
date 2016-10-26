@@ -14,9 +14,15 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(20)
     });
 
+    it('starts with a max temperature at 30', function(){
+      expect(thermostat.MAX_TEMPERATURE).toEqual(30)
+    });
+
     it('has a minimum temperature', function(){
       expect(thermostat.MIN_TEMPERATURE).toEqual(10)
     });
+
+
   });
 
   describe('changing temperature', function(){
@@ -37,6 +43,11 @@ describe('Thermostat', function(){
     it('if on, max temperature is 25', function(){
       thermostat.powerSaveModeOn();
       expect(thermostat.MAX_TEMPERATURE).toEqual(25);
+    });
+
+    it('if off, max temperature is 32', function(){
+      thermostat.powerSaveModeOff();
+      expect(thermostat.MAX_TEMPERATURE).toEqual(32);
     });
 
   });
