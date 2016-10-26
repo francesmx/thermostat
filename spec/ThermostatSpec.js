@@ -11,7 +11,7 @@ describe('Thermostat', function(){
   describe('start conditions', function(){
 
     it('starts with temperature at 20', function(){
-      expect(thermostat.currentTemperature).toEqual(20)
+      expect(thermostat.getCurrentTemp()).toEqual(20)
     });
 
     it('starts with a max temperature of 32', function(){
@@ -30,17 +30,20 @@ describe('Thermostat', function(){
   describe('changing temperature', function(){
 
     it('increasing the temperature', function(){
-      thermostat.increaseTemp(2);
-      expect(thermostat.currentTemperature).toEqual(22)
+      thermostat.increaseTemp();
+      expect(thermostat.getCurrentTemp()).toEqual(21)
     });
 
     it("won't increase the temperature beyond the maximum", function(){
-      expect(function(){ thermostat.increaseTemp(thermostat.MAX_TEMPERATURE - thermostat.currentTemperature); }).toThrowError('Cannot increase temperature beyond the maximum.');
+      for (var i = 0; i < 12 ; i++) {
+        thermostat.increaseTemp();
+      }
+      expect(function(){ thermostat.increaseTemp(); }).toThrowError("Cannot increase temperature beyond the maximum.");
     });
 
     it('decreasing the temperature', function(){
-      thermostat.decreaseTemp(2);
-      expect(thermostat.currentTemperature).toEqual(18)
+      thermostat.decreaseTemp();
+      expect(thermostat.getCurrentTemp()).toEqual(19)
     });
 
     it("won't decrease the temperature beyond the minimum", function(){
@@ -65,9 +68,9 @@ describe('Thermostat', function(){
   describe('reset temperature', function(){
 
     it('resets temperature to 20', function(){
-      thermostat.increaseTemp(5);
+      thermostat.increaseTemp();
       thermostat.resetTemp();
-      expect(thermostat.currentTemperature).toEqual(20)
+      expect(thermostat.getCurrentTemp()).toEqual(20)
     });
   });
 
@@ -84,7 +87,7 @@ describe('Thermostat', function(){
   });
 
   it('displays red when over 25 degrees', function(){
-    thermostat.increaseTemp(6);
+    thermostat.increaseTemp();
     expect(thermostat.colour()).toEqual('Red')
   });
 });
