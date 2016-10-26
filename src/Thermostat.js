@@ -35,3 +35,10 @@ Thermostat.prototype.powerSaveModeOff = function() {
 Thermostat.prototype.resetTemp = function() {
   this.currentTemperature = this.DEFAULT_TEMPERATURE;
 }
+
+Thermostat.prototype.colour = function() {
+  if(this.currentTemperature < 18) {
+    return 'Green';
+  }
+
+}
