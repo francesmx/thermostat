@@ -11,7 +11,7 @@ describe('Thermostat', function(){
   describe('start conditions', function(){
 
     it('starts with temperature at 20', function(){
-      expect(thermostat.temperature).toEqual(20)
+      expect(thermostat.currentTemperature).toEqual(20)
     });
 
     it('starts with a max temperature of 32', function(){
@@ -31,12 +31,16 @@ describe('Thermostat', function(){
 
     it('increasing the temperature', function(){
       thermostat.increaseTemp(2);
-      expect(thermostat.temperature).toEqual(22)
+      expect(thermostat.currentTemperature).toEqual(22)
+    });
+
+    it("won't increase the temperature beyond the maximum", function(){
+      expect(function(){ thermostat.increaseTemp(thermostat.MAX_TEMPERATURE); }).toThrowError('Cannot increase temperature beyond the maximum.');
     });
 
     it('decreasing the temperature', function(){
       thermostat.decreaseTemp(2);
-      expect(thermostat.temperature).toEqual(18)
+      expect(thermostat.currentTemperature).toEqual(18)
     });
   });
 
@@ -58,7 +62,7 @@ describe('Thermostat', function(){
     it('resets temperature to 20', function(){
       thermostat.increaseTemp(100);
       thermostat.resetTemp();
-      expect(thermostat.temperature).toEqual(20)
+      expect(thermostat.currentTemperature).toEqual(20)
     });
   });
 });
