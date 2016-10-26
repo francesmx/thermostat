@@ -1,3 +1,3 @@
 function Thermostat(){
-  this.desiredTemp = 20
+  this.temperature = 20
 }
