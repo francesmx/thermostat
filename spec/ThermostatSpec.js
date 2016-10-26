@@ -47,7 +47,10 @@ describe('Thermostat', function(){
     });
 
     it("won't decrease the temperature beyond the minimum", function(){
-      expect(function(){ thermostat.decreaseTemp(thermostat.MAX_TEMPERATURE - thermostat.currentTemperature); }).toThrowError('Cannot decrease temperature beyond the min.');
+      for (var i = 0; i < 10; i++) {
+        thermostat.decreaseTemp();
+      }
+      expect(function(){ thermostat.decreaseTemp(); }).toThrowError('Cannot decrease temperature beyond the min.');
     });
 
   });
@@ -77,7 +80,9 @@ describe('Thermostat', function(){
   describe('display colour', function(){
 
     it('displays green when below 18 degrees', function(){
-      thermostat.decreaseTemp(3);
+      for (var i = 0; i < 4 ; i++) {
+        thermostat.decreaseTemp();
+      }
       expect(thermostat.colour()).toEqual('Green')
     });
   });
@@ -87,7 +92,9 @@ describe('Thermostat', function(){
   });
 
   it('displays red when over 25 degrees', function(){
-    thermostat.increaseTemp();
+    for (var i = 0; i < 7 ; i++) {
+      thermostat.increaseTemp();
+    }
     expect(thermostat.colour()).toEqual('Red')
   });
 });
