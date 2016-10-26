@@ -14,15 +14,17 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(20)
     });
 
-    it('starts with a max temperature at 30', function(){
-      expect(thermostat.MAX_TEMPERATURE).toEqual(30)
+    it('starts with a max temperature of 32', function(){
+      expect(thermostat.MAX_TEMPERATURE).toEqual(32)
     });
 
-    it('has a minimum temperature', function(){
+    it('starts with a minimum temperature of 10', function(){
       expect(thermostat.MIN_TEMPERATURE).toEqual(10)
     });
 
-
+    it('starts with power saving mode on by default', function(){
+      expect(thermostat.powerSaveMode).toBe(true)
+    });
   });
 
   describe('changing temperature', function(){
