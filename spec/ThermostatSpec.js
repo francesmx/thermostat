@@ -51,6 +51,14 @@ describe('Thermostat', function(){
       thermostat.powerSaveModeOff();
       expect(thermostat.MAX_TEMPERATURE).toEqual(32);
     });
+  });
 
+  describe('reset temperature', function(){
+
+    it('resets temperature to 20', function(){
+      thermostat.increaseTemp(100);
+      thermostat.resetTemp();
+      expect(thermostat.temperature).toEqual(20)
+    });
   });
 });
