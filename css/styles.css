@@ -1,0 +1,15 @@
+html {
+  background-color: red;
+}
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: black;
+}
+
+.high-usage {
+  color: red;
+}
