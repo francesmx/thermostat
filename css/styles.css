@@ -1,11 +1,64 @@
+html,body,p {
+  margin: 0px;
+  padding: 20px;
+  font-family: arial;
+}
+
+section {
+  margin: auto;
+  width: 50%;
+}
+
+#temperature {
+  font-size: 100px;;
+}
+
+#current-temperature {
+  font-size: 20px;;
+}
+
+#coloured-background {
+  text-align: center;
+  padding: 10px;
+}
+
+#temp-up {
+  background-color: white;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 40px;
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+#temp-down {
+  background-color: white;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  font-size: 40px;
+  width: 80px;
+  height: 60px;
+  border-radius: 10px;
+}
+
 .green {
-  color: green;
+  background-color: #e4ffc6;
+  border: 1px dotted #555;
+  width: 400px;
+  border-radius: 10px;
 }
 
 .yellow {
-  color: black;
+  background-color: #fffbd1;
+  border: 1px dotted #555;
+  width: 400px;
+  border-radius: 10px;
 }
 
 .red {
-  color: red;
+  background-color: #f9ebe3;
+  border: 1px dotted #555;
+  width: 400px;
+  border-radius: 10px;
 }

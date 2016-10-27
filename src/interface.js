@@ -17,21 +17,42 @@ $(document).ready(function() {
     updateTemperature();
   })
 
+  // $("#psm-switch").click(function(){
+  //   // $('#psm-switch').slideToggle();
+  //   // $('#psm-switch').html($('#psm-switch').text() == 'Hide me' ? 'Show Me' : 'Hide me');
+  // });
+
+
+  // $('#psm-switch').click(function() {
+  //   if($('#psm-switch').prop('checked', true)) {
+  //     thermostat.powerSaveModeOff();
+  //     $('#power-saving').text('off');
+  //     $('#psm-switch').prop('checked', false);
+  //   }
+  //   else {
+  //     thermostat.powerSaveModeOn();
+  //     $('#power-saving').text('on');
+  //     $('#psm-switch').prop('checked', true);
+  //   }
+  // })
+
   $('#psm-on').click(function() {
     thermostat.powerSaveModeOn();
     $('#power-saving').text('on')
+    $('#psm-switch').prop('checked', true);
     updateTemperature();
   })
 
   $('#psm-off').click(function() {
     thermostat.powerSaveModeOff();
     $('#power-saving').text('off')
+    $('#psm-switch').prop('checked', false);
     updateTemperature();
   })
 
   function updateTemperature() {
     $('#temperature').text(thermostat.currentTemperature);
-    $('#temperature').attr('class', thermostat.colour());
+    $('#coloured-background').attr('class', thermostat.colour());
   }
 
   displayWeather('London');
@@ -39,6 +60,7 @@ $(document).ready(function() {
   $('#select-city').submit(function(event) {
     event.preventDefault();
     var city = $('#current-city').val();
+    $('#city').text(city);
     displayWeather(city);
   })
 

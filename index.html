@@ -7,21 +7,30 @@
     <link
   </head>
   <body>
-  <section>
-    <h1>Current temperature: <span id="current-temperature"><span></h1>
+    <section id="coloured-background">
+      <div id="city">London </div>
+      <div id="current-temperature"> </div>
       <form id="select-city">
         <input id="current-city" type="text" placeholder="Enter a city"></input>
         <input type="submit"></input>
       </form>
-  </section>
-    <h1 id="temperature"></h1>
-    <button id="temp-up">+</button>
-    <button id="temp-down">-</button>
-    <button id="temp-reset">reset</button>
-    power saving mode is <span id="powerSaveMode">on</span>
-    <button id="psm-on">PSM on</button>
-    <button id="psm-off">PSM off</button>
-    <script src="src/thermostat.js"></script>
-    <script src="src/interface.js"></script>
+      <div id="temp-settings">
+        <button id="temp-down">-</button>
+        <span id="temperature"></span>
+        <button id="temp-up">+</button>
+      </div>
+      <span id="power-saving">on</span>
+      <!-- <form>
+        <label class="switch">
+          <input type="checkbox" id="psm-switch" checked>
+          <div class="slider round"></div>
+        </label>
+      </form> -->
+      <button id="psm-on">Eco save</button>
+      <button id="psm-off">Boost</button>
+      <button id="temp-reset">Reset</button>
+    </section>
+      <script src="src/thermostat.js"></script>
+      <script src="src/interface.js"></script>
   </body>
 </html>
