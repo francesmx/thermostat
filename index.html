@@ -4,30 +4,26 @@
     <title>Thermostat</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link
   </head>
   <body>
     <section id="coloured-background">
-      <div id="city">London </div>
-      <div id="current-temperature"> </div>
+      <p id="current-weather">The temperature in <span id="city">London</span> is <span id="current-temperature"></span></p>
       <form id="select-city">
-        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input id="current-city" type="text" placeholder="Enter a different city"></input>
         <input type="submit"></input>
       </form>
       <div id="temp-settings">
         <button id="temp-down">-</button>
-        <span id="temperature"></span>
+        <div id="temperature"></div>
         <button id="temp-up">+</button>
       </div>
-      <span id="power-saving">on</span>
-      <!-- <form>
-        <label class="switch">
-          <input type="checkbox" id="psm-switch" checked>
-          <div class="slider round"></div>
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+          <span class="onoffswitch-inner"></span>
+          <span class="onoffswitch-switch"></span>
         </label>
-      </form> -->
-      <button id="psm-on">Eco save</button>
-      <button id="psm-off">Boost</button>
+      </div>
       <button id="temp-reset">Reset</button>
     </section>
       <script src="src/thermostat.js"></script>

@@ -17,38 +17,19 @@ $(document).ready(function() {
     updateTemperature();
   })
 
-  // $("#psm-switch").click(function(){
-  //   // $('#psm-switch').slideToggle();
-  //   // $('#psm-switch').html($('#psm-switch').text() == 'Hide me' ? 'Show Me' : 'Hide me');
-  // });
-
-
-  // $('#psm-switch').click(function() {
-  //   if($('#psm-switch').prop('checked', true)) {
-  //     thermostat.powerSaveModeOff();
-  //     $('#power-saving').text('off');
-  //     $('#psm-switch').prop('checked', false);
-  //   }
-  //   else {
-  //     thermostat.powerSaveModeOn();
-  //     $('#power-saving').text('on');
-  //     $('#psm-switch').prop('checked', true);
-  //   }
-  // })
-
-  $('#psm-on').click(function() {
-    thermostat.powerSaveModeOn();
-    $('#power-saving').text('on')
-    $('#psm-switch').prop('checked', true);
+  $('#myonoffswitch').click(function() {
+    thermostat.togglePowerSaveMode();
+    updatePowerSavingStatus();
     updateTemperature();
   })
 
-  $('#psm-off').click(function() {
-    thermostat.powerSaveModeOff();
-    $('#power-saving').text('off')
-    $('#psm-switch').prop('checked', false);
-    updateTemperature();
-  })
+  function updatePowerSavingStatus() {
+    if (thermostat.powerSaveMode === true){
+      $('#myonoffswitch').prop('checked', true);
+    } else if (thermostat.powerSaveMode === false) {
+      $('#myonoffswitch').prop('checked', false);
+    }
+  }
 
   function updateTemperature() {
     $('#temperature').text(thermostat.currentTemperature);
@@ -69,7 +50,7 @@ $(document).ready(function() {
     var token = '&appid=1d4c0b4fffcce18c6d389b6d114d489b';
     var units = '&units=metric';
     $.get(url + token + units, function(data) {
-      $('#current-temperature').text(data.main.temp);
+      $('#current-temperature').text(data.main.temp + ' degrees');
     })
   }
 })

@@ -1,6 +1,6 @@
 html,body,p {
   margin: 0px;
-  padding: 20px;
+  padding: 0px;
   font-family: arial;
 }
 
@@ -9,12 +9,18 @@ section {
   width: 50%;
 }
 
-#temperature {
-  font-size: 100px;;
+#temp-settings {
+  margin-top: 10px;
+  vertical-align: middle;
 }
 
-#current-temperature {
-  font-size: 20px;;
+#temperature {
+  font-size: 80px;
+  display: inline;
+}
+
+#current-weather {
+  margin: 10px;
 }
 
 #coloured-background {
@@ -29,6 +35,8 @@ section {
   font-size: 40px;
   width: 80px;
   height: 60px;
+  border: 2px solid;
+  box-shadow: 3px 3px 1px #888888;
   border-radius: 10px;
 }
 
@@ -39,26 +47,97 @@ section {
   font-size: 40px;
   width: 80px;
   height: 60px;
+  border: 2px solid;
+  box-shadow: 3px 3px 1px #888888;
   border-radius: 10px;
 }
 
 .green {
-  background-color: #e4ffc6;
-  border: 1px dotted #555;
+  margin-top: 20px;
+  /*background-color: #e4ffc6;*/
+  border: 3px dotted #888;
   width: 400px;
   border-radius: 10px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdeb8e+0,a5c956+100;Green+3D+%232 */
+  background: #cdeb8e; /* Old browsers */
+  background: -moz-linear-gradient(top,  #cdeb8e 0%, #a5c956 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #cdeb8e 0%,#a5c956 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #cdeb8e 0%,#a5c956 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=0 ); /* IE6-9 */
 }
 
 .yellow {
-  background-color: #fffbd1;
-  border: 1px dotted #555;
+  margin-top: 20px;
+  /*background-color: #fffbd1;*/
+  border: 3px dotted #888;
   width: 400px;
   border-radius: 10px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+  background: #fefcea; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fefcea 0%, #f1da36 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fefcea 0%,#f1da36 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fefcea 0%,#f1da36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); /* IE6-9 */
 }
 
 .red {
-  background-color: #f9ebe3;
-  border: 1px dotted #555;
+  margin-top: 20px;
+  /*background-color: #f9ebe3;*/
+  border: 3px dotted #888;
   width: 400px;
   border-radius: 10px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fceded+0,fe9090+70,ff5c5c+100 */
+  background: #fceded; /* Old browsers */
+  background: -moz-linear-gradient(top,  #fceded 0%, #fe9090 70%, #ff5c5c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #fceded 0%,#fe9090 70%,#ff5c5c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #fceded 0%,#fe9090 70%,#ff5c5c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceded', endColorstr='#ff5c5c',GradientType=0 ); /* IE6-9 */
+}
+
+.onoffswitch {
+  margin: auto;
+  margin-bottom: 10px;
+  position: relative; width: 97px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #888; border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "Eco on";
+  padding-right: 18px;
+  background-color: #888888; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+  content: "Eco off";
+  padding-right: 12px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 63px;
+    border: 2px solid #BDBDBD; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
 }

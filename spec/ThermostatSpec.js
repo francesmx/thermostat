@@ -14,8 +14,8 @@ describe('Thermostat', function(){
       expect(thermostat.getCurrentTemp()).toEqual(20)
     });
 
-    it('starts with a max temperature of 32', function(){
-      expect(thermostat.MAX_TEMPERATURE).toEqual(32)
+    it('starts with a max temperature of 25', function(){
+      expect(thermostat.MAX_TEMPERATURE).toEqual(25)
     });
 
     it('starts with a minimum temperature of 10', function(){
@@ -35,6 +35,7 @@ describe('Thermostat', function(){
     });
 
     it("won't increase the temperature beyond the maximum", function(){
+      thermostat.powerSaveModeOff();
       for (var i = 0; i < 12 ; i++) {
         thermostat.increaseTemp();
       }
@@ -66,6 +67,12 @@ describe('Thermostat', function(){
       thermostat.powerSaveModeOff();
       expect(thermostat.MAX_TEMPERATURE).toEqual(32);
     });
+
+    it('toggles power save mode', function(){
+      thermostat.togglePowerSaveMode();
+      expect(thermostat.powerSaveMode).toEqual(false);
+    });
+
   });
 
   describe('reset temperature', function(){
@@ -92,6 +99,7 @@ describe('Thermostat', function(){
   });
 
   it('displays red when over 25 degrees', function(){
+    thermostat.powerSaveModeOff();
     for (var i = 0; i < 7 ; i++) {
       thermostat.increaseTemp();
     }
