@@ -1,15 +1,11 @@
-html {
-  background-color: red;
-}
-
-.low-usage {
+.green {
   color: green;
 }
 
-.medium-usage {
+.yellow {
   color: black;
 }
 
-.high-usage {
+.red {
   color: red;
 }

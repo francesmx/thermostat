@@ -83,18 +83,18 @@ describe('Thermostat', function(){
       for (var i = 0; i < 4 ; i++) {
         thermostat.decreaseTemp();
       }
-      expect(thermostat.colour()).toEqual('Green')
+      expect(thermostat.colour()).toEqual('green')
     });
   });
 
   it('displays yellow when 18 to 25 degrees', function(){
-    expect(thermostat.colour()).toEqual('Yellow')
+    expect(thermostat.colour()).toEqual('yellow')
   });
 
   it('displays red when over 25 degrees', function(){
     for (var i = 0; i < 7 ; i++) {
       thermostat.increaseTemp();
     }
-    expect(thermostat.colour()).toEqual('Red')
+    expect(thermostat.colour()).toEqual('red')
   });
 });
