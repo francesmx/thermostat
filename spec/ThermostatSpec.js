@@ -88,8 +88,13 @@ describe('Thermostat', function() {
             expect(thermostat.temperature()).toEqual(thermostat._DEFAULT_TEMPERATURE)
         });
 
-        it('resets the power saving to on if from power saving off to power saving on', function() {
-
+        it('resets the power saving to on, if from power saving off to power saving on', function() {
+          thermostat.powerSavingOff();
+          for (var i = 1; i < 7; i++) {
+              thermostat.up();
+          }
+          thermostat.reset();
+          expect(thermostat._powerSaving).toEqual(true)
         });
 
 
