@@ -81,10 +81,18 @@ describe('Thermostat', function() {
 
     });
 
-    it('can be reset', function() {
-        thermostat.up();
-        thermostat.reset();
-        expect(thermostat.temperature()).toEqual(thermostat._DEFAULT_TEMPERATURE)
+    describe('reset functions', function() {
+        it('can be reset', function() {
+            thermostat.up();
+            thermostat.reset();
+            expect(thermostat.temperature()).toEqual(thermostat._DEFAULT_TEMPERATURE)
+        });
+
+        it('resets the power saving to on if from power saving off to power saving on', function() {
+
+        });
+
+
     });
 
 
