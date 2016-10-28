@@ -1,10 +1,11 @@
 $(document).ready(function() {
     var thermostat = new Thermostat();
     $('#temperature').text(thermostat.temperature());
+    updateTemperature();
 
     function updateTemperature() {
         $('#temperature').text(thermostat.temperature());
-        $('#temperature').attr('class', thermostat.energyUse());
+        $('#container').attr('class', thermostat.energyUse());
     }
 
     $('#temp-up').click(function() {
@@ -39,6 +40,7 @@ $(document).ready(function() {
 
     $('#reset').click(function() {
         thermostat.reset();
+        $('#power-saving-status').text('ON')
         updateTemperature();
     });
 
@@ -47,6 +49,8 @@ $(document).ready(function() {
     $('#select-city').submit(function(event) {
         event.preventDefault();
         var city = $('#current-city').val();
+        $('#current-city').val("");
+        $('#selected-city').text(city);
         displayWeather(city);
     });
 
