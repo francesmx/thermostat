@@ -1,32 +1,74 @@
+body {
+    margin: auto;
+    width: 500px;
+    font-family: arial;
+}
+
 .low-usage {
-  background-color: green;
+    text-align: center;
+    border: 1px solid #444;
+    margin: 20px;
+    padding: 20px;
+    background: #f8ffe8;
+    border-radius: 10px;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f8ffe8 0%, #e3f5ab 33%, #b7df2d 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f8ffe8 0%, #e3f5ab 33%, #b7df2d 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f8ffe8 0%, #e3f5ab 33%, #b7df2d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#b7df2d', GradientType=0);
+    /* IE6-9 */
 }
 
 .medium-usage {
-  text-align: center;
-  border: 1px solid #444;
-  margin: 20px;¢
-  padding: 20px;
-  background: #fefcea; /* Old browsers */
-  background: -moz-linear-gradient(top,  #fefcea 0%, #efe07f 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  #fefcea 0%,#efe07f 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  #fefcea 0%,#efe07f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#efe07f',GradientType=0 ); /* IE6-9 */
+    text-align: center;
+    border: 1px solid #444;
+    margin: 20px;
+    padding: 20px;
+    background: #fefcea;
+    border-radius: 10px;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #fefcea 0%, #efe07f 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fefcea 0%, #efe07f 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fefcea 0%, #efe07f 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#efe07f', GradientType=0);
+    /* IE6-9 */
 }
 
 .high-usage {
-  background-color: red;
+    text-align: center;
+    border: 1px solid #444;
+    margin: 20px;
+    padding: 20px;
+    background: #efe4e1;
+    border-radius: 10px;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #efe4e1 0%, #f07146 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #efe4e1 0%, #f07146 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #efe4e1 0%, #f07146 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#efe4e1', endColorstr='#f07146', GradientType=0);
+    /* IE6-9 */
 }
 
 #temperature {
-  font-size: 80px;
+    font-size: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #main_part button {
-  background-color: white;
-  font-size: 50px;
-  width: 80px;
-  height: 60px;
-  border: 3px solid #666;
-  border-radius: 10px;
+    background-color: white;
+    font-size: 50px;
+    width: 80px;
+    height: 60px;
+    border: 3px solid #666;
+    border-radius: 10px;
 }
