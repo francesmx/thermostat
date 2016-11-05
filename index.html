@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thermostat</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </head>
+  <body>
+    <section id="coloured-background">
+      <p id="current-weather">The temperature in <span id="city">London</span> is <span id="current-temperature"></span></p>
+      <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a different city"></input>
+        <input type="submit"></input>
+      </form>
+      <div id="temp-settings">
+        <button id="temp-down">-</button>
+        <div id="temperature"></div>
+        <button id="temp-up">+</button>
+      </div>
+      <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+          <span class="onoffswitch-inner"></span>
+          <span class="onoffswitch-switch"></span>
+        </label>
+      </div>
+      <button id="temp-reset">Reset</button>
+    </section>
+      <script src="src/thermostat.js"></script>
+      <script src="src/interface.js"></script>
+  </body>
+</html>
